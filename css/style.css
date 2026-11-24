@@ -1,0 +1,183 @@
+/* Lato and Source Code Pro (SIL Open Font License), stored in ../fonts */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/lato-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(../fonts/lato-300.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/lato-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/lato-700.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/source-code-pro-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --blue: #226e93;
+  --button: #1e6c93;
+  --text: #212121;
+  --grey: #666;
+  --grey-light: #999;
+  --gap: 26px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font: 400 11pt/1.6667 Lato, Arial, sans-serif;
+}
+img { display: block; max-width: 100%; height: auto; }
+p { margin: 12px 0 0; }
+h1, h2, h3 { margin: 0; overflow-wrap: break-word; }
+h1 { font-size: 34pt; font-weight: 300; line-height: 1.2; letter-spacing: .5px; color: var(--blue); }
+h2 { font-size: 19pt; font-weight: 400; line-height: 1.4; color: var(--blue); }
+h3 { font-size: 15pt; font-weight: 400; line-height: 1.25; }
+.mono { font-family: "Source Code Pro", monospace; font-weight: 400; }
+.grey { color: var(--grey); }
+.grey-light { color: var(--grey-light); }
+.center { text-align: center; }
+a { color: #006580; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 56px; padding: 0 28px;
+  background: #fff;
+}
+.site-header a { text-decoration: none; }
+.site-name { font-size: 20px; font-weight: 300; color: var(--text); }
+.site-nav { display: flex; gap: 26px; }
+.site-nav a { font-size: 12pt; font-weight: 300; color: var(--grey); }
+.site-nav a:hover { color: #000; }
+.site-nav a[aria-current] { font-weight: 700; color: var(--text); }
+
+/* Layout */
+main { padding-bottom: 80px; }
+.wrap { width: 100%; max-width: 1158px; margin: 0 auto; }
+.medium { max-width: 960px; }
+.narrow { max-width: 764px; }
+.pad { padding-left: 10px; padding-right: 10px; }
+
+/* Home */
+.hero h1 { padding: 41px 0 30px; text-align: center; }
+.hero img { width: 100%; max-width: 760px; margin: 0 auto; }
+.about { display: grid; grid-template-columns: 666px 464px; justify-content: space-between; align-items: start; padding-top: 56px; }
+.about h2 { margin-bottom: -1px; }
+.about .carousel { margin-top: 62px; }
+.statement { padding: 48px 0; }
+.statement p { margin: 0; font-size: 14pt; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 52px var(--gap); }
+.cards p { text-align: center; }
+.contact { padding: 150px 10px 0; text-align: center; }
+.contact a { color: inherit; text-decoration: none; }
+.contact a:hover { text-decoration: underline; }
+
+/* Empty image slots: replace each with an <img> */
+.placeholder { width: 100%; aspect-ratio: 1; background: rgba(0, 0, 0, .03); outline: 2px dashed rgba(0, 0, 0, .1); outline-offset: -1px; }
+
+/* Carousel */
+.carousel { width: 100%; }
+.slides { position: relative; overflow: hidden; aspect-ratio: var(--ratio, 1.3); }
+.slides img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; visibility: hidden; transition: opacity .6s, visibility .6s;
+}
+.slides img.active { opacity: 1; visibility: visible; }
+.arrow {
+  position: absolute; top: 50%; z-index: 2; width: 40px; height: 40px; margin-top: -20px;
+  border: 0; border-radius: 50%; background: rgba(0, 0, 0, .45); color: #fff;
+  font: 24px/1 Arial, sans-serif; cursor: pointer; opacity: 0; transition: opacity .2s;
+}
+.arrow.prev { left: 12px; }
+.arrow.next { right: 12px; }
+.carousel:hover .arrow, .carousel:focus-within .arrow { opacity: 1; }
+.caption { min-height: 15px; margin: 10px 0 0; font-size: 9pt; line-height: 1.2; text-align: center; }
+.dots { display: flex; justify-content: center; margin-top: 2px; }
+.dots button { padding: 8px 4px; border: 0; background: none; cursor: pointer; }
+.dots button::before { content: ""; display: block; width: 10px; height: 10px; border-radius: 50%; background: #c7c7c7; transition: background-color .6s; }
+.dots button.active::before { background: var(--button); }
+/* JavaScript off: show the images one after another */
+.no-js .slides { aspect-ratio: auto; }
+.no-js .slides img { position: static; height: auto; opacity: 1; visibility: visible; margin-bottom: 12px; }
+
+/* Experience */
+.intro { display: grid; grid-template-columns: 560px 562px; justify-content: space-between; align-items: center; padding-top: 24px; }
+.intro p { margin-top: 24px; }
+.intro > .pad { padding-bottom: 86px; }
+.jobs { padding-top: 50px; }
+.entry { padding-top: 42px; }
+.entry time, .dates { display: block; font-size: 9pt; line-height: 1.2; }
+.entry .role { font-style: italic; }
+.entry ul { margin: 0; padding: 0 0 0 20px; list-style: square; }
+.entry li { margin-top: 6px; }
+.education { padding-top: 72px; }
+.education .entry { padding-top: 16px; }
+
+/* Projects */
+.project-title { padding: 36px 0 60px; text-align: center; }
+.gallery { display: grid; grid-template-columns: 1fr 2fr; grid-template-rows: 1fr 1fr; gap: var(--gap); padding: 140px 0; }
+.gallery > * { min-height: 0; aspect-ratio: auto; }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.gallery .large { grid-column: 2; grid-row: 1 / span 2; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 44px var(--gap); padding: 140px 0; }
+.button { display: block; max-width: 364px; margin: 150px auto 0; padding: 8px; border-radius: 3px; background: var(--button); color: #fff; font-size: 11pt; line-height: 1.25; text-align: center; text-decoration: none; }
+.button:hover { background: #17587a; }
+
+:focus-visible { outline: 2px solid var(--button); outline-offset: 3px; }
+
+@media (max-width: 1200px) {
+  main { padding-left: 28px; padding-right: 28px; }
+  .about { grid-template-columns: 1.4fr 1fr; gap: 32px; }
+  .intro { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 767px) {
+  .site-header { flex-wrap: wrap; padding: 10px 20px; gap: 2px 20px; }
+  .site-nav { gap: 18px; }
+  main { padding-left: 20px; padding-right: 20px; }
+  .pad { padding-left: 0; padding-right: 0; }
+  .intro > .pad { padding-bottom: 0; }
+  h1 { font-size: 24pt; }
+  h2 { font-size: 15pt; }
+  h3 { font-size: 13pt; }
+  .hero h1 { padding: 24px 0 20px; }
+  .about, .intro, .cards, .grid-2 { grid-template-columns: minmax(0, 1fr); }
+  .contact { padding-top: 80px; }
+  .about .carousel { margin-top: 0; }
+  .project-title { padding: 24px 0; }
+  .gallery { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; padding: 50px 0; }
+  .gallery .large { grid-column: auto; grid-row: auto; }
+  .gallery .placeholder { aspect-ratio: 4 / 3; }
+  .grid-2 { padding: 50px 0; }
+  .button { margin-top: 60px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
