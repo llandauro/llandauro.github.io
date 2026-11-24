@@ -1,0 +1,22 @@
+# Technical settings for GitHub Pages. You should not need to edit this file:
+# the content of the website is in _data/, _projects/ and images/ (see README.md).
+theme: null
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name.html
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+# Keep quotes and apostrophes exactly as typed
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+exclude:
+  - README.md

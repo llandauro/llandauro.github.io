@@ -1,0 +1,6 @@
+{%- comment -%} One picture, or an empty dashed box when no image is given. Parameters: item, class {%- endcomment -%}
+{%- if include.item.image and include.item.image != "" -%}
+<img{% if include.class %} class="{{ include.class }}"{% endif %} src="{{ '/images/' | append: include.item.image | relative_url }}" alt="{{ include.item.alt | escape }}">
+{%- else -%}
+<div class="placeholder{% if include.class %} {{ include.class }}{% endif %}"></div>
+{%- endif -%}

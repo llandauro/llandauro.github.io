@@ -1,0 +1,10 @@
+# SITE-WIDE CONTENT: shown on every page
+# Keep the quotes "..." around short texts.
+
+name: "Lara Libertad Landauro"
+
+# Labels in the top menu
+menu:
+  home: "Home"
+  experience: "Experience"
+  projects: "Projects"

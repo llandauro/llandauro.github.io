@@ -1,53 +1,19 @@
+---
+# Sends visitors to the first project. The projects are in _projects/
+layout: null
+---
+{%- assign projects = site.projects | sort: "order", "last" -%}
+{%- assign target = "/index.html" -%}
+{%- if projects.size > 0 -%}{%- assign target = projects[0].url -%}{%- endif -%}
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projects - Lara Libertad Landauro</title>
-  <meta name="description" content="Projects by Lara Libertad Landauro.">
-  <link rel="stylesheet" href="css/style.css">
+  <title>{{ site.data.site.menu.projects | escape }} - {{ site.data.site.name | escape }}</title>
+  <meta http-equiv="refresh" content="0; url={{ target | relative_url }}">
+  <link rel="canonical" href="{{ target | relative_url }}">
 </head>
 <body>
-  <header class="site-header">
-    <a class="site-name" href="index.html">Lara Libertad Landauro</a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a href="projects.html" aria-current="page">Projects</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="wrap">
-      <h1 class="project-title">[Project Name]</h1>
-      <h2 class="center">Write a 1-2 sentence description of your project</h2>
-    </section>
-
-    <!-- Replace each placeholder with <img src="images/..." alt="..."> -->
-    <section class="gallery wrap">
-      <img src="images/project-sample.jpg" alt="Hands using a smartphone (sample image)">
-      <div class="placeholder large"></div>
-      <div class="placeholder"></div>
-    </section>
-
-    <section class="wrap narrow pad">
-      <h3>A description of the images you are showcasing for your project, your process, and the artifacts you created along the way</h3>
-    </section>
-
-    <section class="grid-2 wrap narrow">
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-    </section>
-
-    <section class="wrap narrow pad">
-      <h3>Describe what role you played on your team. Who did you have to work with to achieve your goal? What was the outcome of the project?</h3>
-    </section>
-
-    <!-- Set href to your next project page -->
-    <a class="button" href="#">Next project</a>
-  </main>
-
+  <p><a href="{{ target | relative_url }}">{{ site.data.site.menu.projects | escape }}</a></p>
 </body>
 </html>

@@ -1,0 +1,64 @@
+# EXPERIENCE PAGE (CV)
+# - Keep the quotes "..." around short texts. For a quote inside, write \".
+# - Jobs appear in the order of this file: put the newest first.
+# - To add a job, copy a whole block starting at "- dates:" and change it.
+# - Lines you do not need (role, bullets, note) can be deleted.
+# - **bold**, *italic* and [link text](https://...) work in intro, bullets and note.
+
+# Description shown by search engines
+search_description: "Work experience and education of Lara Libertad Landauro."
+
+title: "Experience"
+
+intro: |
+  Throughout my Bachelor's of Computer Science at McGill University, I have completed three internships, in video gaming data analytics, robotics research and tech consultancy, in Montreal and Belgium.
+
+# Sliding pictures, in order. "caption" is the text under the picture; use "" for none.
+carousel:
+  - image: "kpmg.jpg"
+    alt: "KPMG banner: I have joined the KPMG in Québec family"
+    caption: ""
+  - image: "mcgill.jpg"
+    alt: "McGill University campus in autumn"
+    caption: "McGill University"
+  - image: "sparkers.jpg"
+    alt: "Sparkers: your entertainment data companion"
+    caption: ""
+
+jobs_title: "Work Experience"
+
+jobs:
+  - dates: "May 2025 - August 2025"
+    company: "KPMG Management Consulting"
+    location: "Montreal Canada"
+    role: "Data Analytics and Automation intern"
+    bullets:
+      - "Supported data engineers in backend and frontend tasks for a telecommunications data migration at a major Canadian bank, with direct client collaboration"
+      - "Wrote 60+ pages of documentation on the client’s telecommunications data architecture, covering Microsoft Azure Synapse data pipelines, SQL Server databases, and clear supporting diagrams."
+      - "Automated duplicate detection in the database using Data Synapse pipelines and implemented an alert system to flag duplicates in real time"
+
+  - dates: "May 2024 - August 2024"
+    company: "McGill's Centre for Intelligent Machines"
+    location: "Montreal, Canada"
+    role: "Science Undergraduate Research Award (SURA) Recipient at the Mobile Robotics Lab under supervision of Prof. David Meger"
+    bullets:
+      - "Cowrote Topological Mapping for Traversability-Aware Long-Range Navigation in Extreme Off-Road Terrain for ICRA Conference"
+      - "Conducted independent research comparing traversability estimation models in extreme off-road terrain"
+      - "Tested research advancements on a rover in Gault’s Natural Reserve weekly"
+    note: "More information in [Projects](projects.html)."
+
+  - dates: "May - August 2024"
+    company: "Sparkers Entertainment Data Company"
+    location: "Belgium"
+    bullets:
+      - "Compiled and standardized data gathered by analysts and partners to ensure its timely and accurate collection May – August 2022"
+      - "Published Benelux, Japanese, and British gaming weekly sales reports with 100% met deadlines and distribution to 200+ partners"
+      - "Automated weekly adjustments for gamepad sales in Iberia, Italy, and Benelux using SQL queries and Excel macros, saving the team 2 hours per week"
+
+education_title: "Education"
+
+education:
+  - dates: "September 2021 - December 2025 (Expected)"
+    school: "McGill University"
+    details: "Science Faculty, Montreal, Canada"
+    degree: "Bachelor of Science, Computer Science Major, Minor in Management - CGPA: 3.63"

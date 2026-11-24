@@ -1,0 +1,36 @@
+{%- assign name = site.data.site.name -%}
+{%- assign menu = site.data.site.menu -%}
+{%- assign projects = site.projects | sort: "order", "last" -%}
+{%- assign section = page.section -%}
+{%- if page.collection == "projects" -%}{%- assign section = "projects" -%}{%- endif -%}
+{%- assign content_data = site.data[page.section] -%}
+{%- assign search_description = page.search_description | default: content_data.search_description -%}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if section != "home" %}{{ menu[section] | escape }} - {% endif %}{{ name | escape }}</title>
+  <meta name="description" content="{{ search_description | escape }}">
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="{{ '/index.html' | relative_url }}">{{ name | escape }}</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="{{ '/index.html' | relative_url }}"{% if section == "home" %} aria-current="page"{% endif %}>{{ menu.home | escape }}</a>
+      <a href="{{ '/experience.html' | relative_url }}"{% if section == "experience" %} aria-current="page"{% endif %}>{{ menu.experience | escape }}</a>
+      {%- if projects.size > 0 %}
+      <a href="{{ projects[0].url | relative_url }}"{% if section == "projects" %} aria-current="page"{% endif %}>{{ menu.projects | escape }}</a>
+      {%- endif %}
+    </nav>
+  </header>
+
+  <main>
+{{ content }}
+  </main>
+{% if content contains 'class="carousel"' %}
+  <script src="{{ '/js/carousel.js' | relative_url }}"></script>
+{%- endif %}
+</body>
+</html>
