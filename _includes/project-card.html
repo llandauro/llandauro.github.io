@@ -1,0 +1,18 @@
+{%- comment -%} Project picture and summary. Parameters: project, large (true for the wide version) {%- endcomment -%}
+<article class="card{% if include.large %} card-large{% endif %}">
+        {% include image.html item=include.project.cover %}
+        <div class="card-text">
+          {%- if include.project.label %}
+          <p class="label">{{ include.project.label | escape }}</p>
+          {%- endif %}
+          <h3><a href="{{ include.project.url | relative_url }}">{{ include.project.title | escape }}</a></h3>
+          <p>{{ include.project.summary | escape }}</p>
+          {%- if include.large and include.project.paper %}
+          <p class="authors">{% include inline.html text=include.project.paper.authors %}</p>
+          {%- endif %}
+          <p class="go" aria-hidden="true">View project -&gt;</p>
+          {%- if include.large %}
+          {% include links.html links=include.project.links %}
+          {%- endif %}
+        </div>
+      </article>

@@ -1,0 +1,35 @@
+# PROJECTS PAGE
+# The big projects are in _projects/ (one file each).
+# Below are the short ones: "link" can be a page or "" for none.
+
+# Description shown by search engines
+search_description: "Robotics and computer vision projects by Lara Libertad Landauro: off-road navigation, an underwater robot and microplastics on turtle nesting beaches."
+
+title: "Projects"
+
+intro: |
+  Computer vision and robotics in the field: from forests and pools to beaches.
+
+more_title: "More projects"
+
+more:
+  - dates: "2024 - 2025"
+    title: "Welcome Collective inventory"
+    text: "Project manager of an inventory system tracking donations for refugee claimants in Montreal, with Hack4Impact McGill."
+    link: ""
+  - dates: "2024 - 2025"
+    title: "Donation tracking platform"
+    text: "Project manager of a platform connecting local organizations with donors, with UAEM and Hack4Impact McGill."
+    link: ""
+  - dates: "2024 - now"
+    title: "Mentor-mentee matching"
+    text: "Matching algorithm behind the mentorship program of ALPFA Montreal."
+    link: ""
+  - dates: "Jan 2024"
+    title: "McGill Clubs Enhanced"
+    text: "Dynamic website using ChatGPT's API, made at McHacks 11."
+    link: ""
+  - dates: "2023 - 2024"
+    title: "Grant database"
+    text: "Automated deadline updates for 20+ funding opportunities, for the Montreal Friendship Center."
+    link: ""

@@ -1,64 +1,164 @@
 # EXPERIENCE PAGE (CV)
 # - Keep the quotes "..." around short texts. For a quote inside, write \".
-# - Jobs appear in the order of this file: put the newest first.
+# - Everything appears in the order of this file: put the newest first.
 # - To add a job, copy a whole block starting at "- dates:" and change it.
-# - Lines you do not need (role, bullets, note) can be deleted.
+# - Lines you do not need (role, location, bullets, note) can be deleted.
 # - **bold**, *italic* and [link text](https://...) work in intro, bullets and note.
 
 # Description shown by search engines
-search_description: "Work experience and education of Lara Libertad Landauro."
+search_description: "Research, work experience, teaching, leadership and education of Lara Libertad Landauro."
 
 title: "Experience"
 
 intro: |
-  Throughout my Bachelor's of Computer Science at McGill University, I have completed three internships, in video gaming data analytics, robotics research and tech consultancy, in Montreal and Belgium.
-
-# Sliding pictures, in order. "caption" is the text under the picture; use "" for none.
-carousel:
-  - image: "kpmg.jpg"
-    alt: "KPMG banner: I have joined the KPMG in Québec family"
-    caption: ""
-  - image: "mcgill.jpg"
-    alt: "McGill University campus in autumn"
-    caption: "McGill University"
-  - image: "sparkers.jpg"
-    alt: "Sparkers: your entertainment data companion"
-    caption: ""
-
-jobs_title: "Work Experience"
-
-jobs:
-  - dates: "May 2025 - August 2025"
-    company: "KPMG Management Consulting"
-    location: "Montreal Canada"
-    role: "Data Analytics and Automation intern"
-    bullets:
-      - "Supported data engineers in backend and frontend tasks for a telecommunications data migration at a major Canadian bank, with direct client collaboration"
-      - "Wrote 60+ pages of documentation on the client’s telecommunications data architecture, covering Microsoft Azure Synapse data pipelines, SQL Server databases, and clear supporting diagrams."
-      - "Automated duplicate detection in the database using Data Synapse pipelines and implemented an alert system to flag duplicates in real time"
-
-  - dates: "May 2024 - August 2024"
-    company: "McGill's Centre for Intelligent Machines"
-    location: "Montreal, Canada"
-    role: "Science Undergraduate Research Award (SURA) Recipient at the Mobile Robotics Lab under supervision of Prof. David Meger"
-    bullets:
-      - "Cowrote Topological Mapping for Traversability-Aware Long-Range Navigation in Extreme Off-Road Terrain for ICRA Conference"
-      - "Conducted independent research comparing traversability estimation models in extreme off-road terrain"
-      - "Tested research advancements on a rover in Gault’s Natural Reserve weekly"
-    note: "More information in [Projects](projects.html)."
-
-  - dates: "May - August 2024"
-    company: "Sparkers Entertainment Data Company"
-    location: "Belgium"
-    bullets:
-      - "Compiled and standardized data gathered by analysts and partners to ensure its timely and accurate collection May – August 2022"
-      - "Published Benelux, Japanese, and British gaming weekly sales reports with 100% met deadlines and distribution to 200+ partners"
-      - "Automated weekly adjustments for gamepad sales in Iberia, Italy, and Benelux using SQL queries and Excel macros, saving the team 2 hours per week"
+  Robotics research, software and data work, and teaching, in Montreal, Belgium and remotely.
 
 education_title: "Education"
 
 education:
-  - dates: "September 2021 - December 2025 (Expected)"
+  - dates: "Sep 2026 - May 2028 (expected)"
+    degree: "M.Sc. Computer Science (Thesis)"
     school: "McGill University"
-    details: "Science Faculty, Montreal, Canada"
-    degree: "Bachelor of Science, Computer Science Major, Minor in Management - CGPA: 3.63"
+    details: "Supervised by Prof. David Meger"
+  - dates: "Sep 2021 - May 2026"
+    degree: "B.Sc. Computer Science Major, Minor in Management"
+    school: "McGill University"
+
+# Groups of jobs. To add a group, copy a block from "- title:" to its last job.
+groups:
+  - title: "Research and industry"
+    jobs:
+      - dates: "Mar 2026 - Aug 2026"
+        role: "Scientific Programmer/Analyst"
+        company: "Kinsol Research"
+        location: "Victoria, BC (remote)"
+        bullets:
+          - "Labelled 3,000+ images and analyzed data gaps to improve an **object detection system that monitors fish populations at sea**, for a marine conservation research organization"
+          - "Developed a custom Slack bot for a behavioural AI analytics startup, automating data entry for their end-clients"
+          - "Worked with internal and client engineering teams to turn requirements into functional software and automated workflows"
+
+      - dates: "May 2025 - Aug 2025"
+        role: "Data Analytics and Automation Intern"
+        company: "KPMG Management Consulting"
+        location: "Montreal, QC"
+        bullets:
+          - "Supported data engineers in backend and frontend tasks for a **telecommunications data migration at a major Canadian bank**, with direct client collaboration"
+          - "Wrote 40+ pages of documentation on the client's data architecture, covering Microsoft Azure Synapse pipelines, SQL Server databases and supporting diagrams"
+          - "Automated duplicate detection with Synapse pipelines and implemented an alert system that flags duplicates in real time"
+
+      - dates: "May 2024 - Aug 2024"
+        role: "Research Assistant, Mobile Robotics Lab"
+        company: "McGill's Centre for Intelligent Machines"
+        location: "Montreal, QC"
+        bullets:
+          - "Recipient of a Science Undergraduate Research Award (SURA), supervised by Prof. David Meger"
+          - "Edited [*Topological mapping for traversability-aware long-range navigation in off-road terrain*](projects/topological-mapping.html), **published at ICRA 2025**"
+          - "Conducted independent research comparing traversability estimation models in extreme off-road terrain"
+          - "Tested research advancements weekly on a rover in the Gault Nature Reserve"
+
+      - dates: "Sep 2023 - Apr 2024"
+        role: "Research Assistant and Project Coordinator"
+        company: "Integrated Management Student Fellowship"
+        location: "Montreal, QC"
+        bullets:
+          - "Analyzed how a hearing assessment application, Age of Your Ears, changed the awareness and behaviour of 50+ music students"
+          - "Developed a grant database for the Montreal Friendship Center, with **automated deadline updates** for 20+ funding opportunities using ChatGPT APIs and web scraping"
+          - "Created a funding management guidebook for 5+ Indigenous Montreal NGOs"
+
+      - dates: "May 2022 - Aug 2022"
+        role: "Market Analyst Intern, Benelux"
+        company: "Sparkers, entertainment data company"
+        location: "Wavre, Belgium"
+        bullets:
+          - "Published weekly Benelux, Japanese and British gaming sales reports for 200+ partners, meeting every deadline"
+          - "Automated weekly adjustments for gamepad sales in Iberia, Italy and Benelux with SQL queries and Excel macros, saving the team 2 hours per week"
+
+  - title: "Teaching at McGill"
+    jobs:
+      - dates: "Sep 2026 - now"
+        role: "Teaching Assistant, COMP208"
+        company: "Computer Programming for Physical Sciences and Engineering"
+        bullets:
+          - "Individual 20-minute Python coding assessments (100+), and help with drafting, refining and grading exam questions"
+
+      - dates: "Sep 2025 - Dec 2025"
+        role: "Teaching Assistant, COMP310"
+        company: "Operating Systems"
+        bullets:
+          - "Code reviews for 3 projects in C, grading for 200+ students, weekly office hours and the course Discord"
+
+      - dates: "Jan 2024 - Dec 2025"
+        role: "Mathematics Grader, MATH323"
+        company: "Probability"
+        bullets:
+          - "4 assignments per semester for 500+ students"
+
+      - dates: "Jan 2023 - Dec 2023"
+        role: "Teaching Assistant, MGSC372"
+        company: "Advanced Business Statistics"
+        bullets:
+          - "Grading and feedback on statistical methods for 120+ students, and weekly office hours"
+
+  - title: "Leadership and community"
+    jobs:
+      - dates: "Sep 2024 - now"
+        role: "Director of Student Affairs"
+        company: "ALPFA Montreal Professional Chapter"
+        bullets:
+          - "Built the mentor-mentee matching algorithm of the mentorship program"
+          - "One of the chapter's two delegates at the 2025 ALPFA Annual Convention in Las Vegas"
+
+      - dates: "Feb 2025 - Dec 2025"
+        role: "Autonomous Underwater Vehicle Software Engineer"
+        company: "McGill Robotics"
+        bullets:
+          - "Built the [computer vision system for RoboSub 2025](projects/robosub-auv.html) and was selected to represent the team in Irvine, California"
+          - "Guided incoming students through the computer vision pipeline, as they recreated it in ROS 2 for the following season"
+          - "Team results: **Top Presentation** and two 3rd places at RoboSub 2025, then 6th in the Autonomy Challenge at RoboSub 2026"
+
+      - dates: "Mar 2024 - Aug 2025"
+        role: "Project Manager"
+        company: "McGill's Hack4Impact Chapter"
+        bullets:
+          - "Led the creation of an **inventory management system for the Welcome Collective**, to track and store items donated to Montreal's most vulnerable refugee claimants"
+          - "Managed a donation tracking platform connecting local organizations with donors, with Universities Allied for Essential Medicines (UAEM)"
+
+      - dates: "Jan 2022 - Apr 2025"
+        role: "Co-President"
+        company: "McGill Spanish and Latin-American Student Association (SLASA)"
+        bullets:
+          - "Led 3 teams (20 members) organizing academic and cultural events, including a panel with Latin-American consuls and a networking event with Latinas in Tech"
+          - "Oversaw logistics and sponsorship of humanitarian projects, such as the summer 2024 project on menstrual poverty in Brazil"
+
+awards_title: "Awards"
+
+awards:
+  - dates: "Aug 2025"
+    title: "Top Presentation, RoboSub 2025"
+    details: "With [McGill Robotics](projects/robosub-auv.html), also 3rd in Design Documentation and in the MathWorks Simulation Challenge"
+  - dates: "2024 - 2025"
+    title: "Tomlinson Engagement Award for Mentoring (TEAM)"
+    details: "Computer Science HelpDesk, McGill"
+  - dates: "Summer 2024"
+    title: "Science Undergraduate Research Award (SURA)"
+    details: "McGill University"
+  - dates: "Feb 2024"
+    title: "Most unique robot design"
+    details: "[RoboHacks 2024](projects/robohacks.html), Zero Waste theme"
+  - dates: "Nov 2022"
+    title: "First place, $2,500"
+    details: "Scotiabank Ethics in Action Case Competition, Dalhousie University"
+
+skills_title: "Skills"
+
+skills:
+  - label: "robotics"
+    text: "ROS, ROS 2, Linux"
+  - label: "vision & data"
+    text: "PyTorch, YOLO, Roboflow, Pandas"
+  - label: "languages"
+    text: "Python, C, Java, SQL, JavaScript, Bash"
+  - label: "web & cloud"
+    text: "React, HTML, CSS, Microsoft Azure"
+  - label: "spoken"
+    text: "English, French, Spanish (fluent), Mandarin (A2)"

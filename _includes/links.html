@@ -1,0 +1,8 @@
+{%- comment -%} Row of links, the first one is highlighted. Parameter: links {%- endcomment -%}
+{%- if include.links and include.links.size > 0 -%}
+<ul class="links">
+        {%- for link in include.links %}
+        <li><a href="{{ link.url | escape }}">{{ link.text | escape }}</a></li>
+        {%- endfor %}
+      </ul>
+{%- endif -%}

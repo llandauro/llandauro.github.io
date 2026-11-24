@@ -1,49 +1,72 @@
 ---
-# Layout only: the text and pictures are in _data/experience.yml
+# Layout only: the text is in _data/experience.yml
 layout: default
 section: experience
 ---
 {%- assign cv = site.data.experience -%}
-    <section class="intro wrap">
-      <div class="pad">
-        <h2 class="mono grey">{{ cv.title | escape }}</h2>
-        {{ cv.intro | markdownify }}
+    <header class="page-head wrap">
+      <h1>{{ cv.title | escape }}</h1>
+      <div class="lead">{{ cv.intro | markdownify }}</div>
+    </header>
+
+    <section class="cv wrap">
+      <h2>{{ cv.education_title | escape }}</h2>
+      <div>
+        {%- for item in cv.education %}
+        <article class="entry">
+          <p class="dates">{{ item.dates | escape }}</p>
+          <div>
+            <h3>{{ item.degree | escape }}</h3>
+            <p class="org">{{ item.school | escape }}{% if item.details %} <span>{{ item.details | escape }}</span>{% endif %}</p>
+          </div>
+        </article>
+        {%- endfor %}
       </div>
-      {% include carousel.html pictures=cv.carousel ratio="1.78" %}
     </section>
 
-    <section class="jobs wrap medium pad">
-      <h3 class="mono">{{ cv.jobs_title | escape }}</h3>
-      {% for job in cv.jobs %}
-      <article class="entry">
-        <span class="dates">{{ job.dates | escape }}</span>
-        <p><strong>{{ job.company | escape }}</strong>{% if job.location %}, <em>{{ job.location | escape }}</em>{% endif %}</p>
-        {%- if job.role %}
-        <p class="role">{{ job.role | escape }}</p>
-        {%- endif %}
-        {%- if job.bullets %}
-        <ul>
-          {%- for bullet in job.bullets %}
-          <li>{{ bullet | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
-          {%- endfor %}
-        </ul>
-        {%- endif %}
-        {%- if job.note %}
-        {{ job.note | markdownify | strip }}
-        {%- endif %}
-      </article>
-      {% endfor %}
+    {%- for group in cv.groups %}
+    <section class="cv wrap">
+      <h2>{{ group.title | escape }}</h2>
+      <div>
+        {%- for job in group.jobs %}
+        <article class="entry">
+          <p class="dates">{{ job.dates | escape }}</p>
+          <div>
+            <h3>{{ job.role | default: job.company | escape }}</h3>
+            <p class="org">{% if job.role %}{{ job.company | escape }}{% endif %}{% if job.location %} <span>{{ job.location | escape }}</span>{% endif %}</p>
+            {%- if job.bullets %}
+            <ul>
+              {%- for bullet in job.bullets %}
+              <li>{% include inline.html text=bullet %}</li>
+              {%- endfor %}
+            </ul>
+            {%- endif %}
+            {%- if job.note %}
+            {{ job.note | markdownify | strip }}
+            {%- endif %}
+          </div>
+        </article>
+        {%- endfor %}
+      </div>
+    </section>
+    {%- endfor %}
+
+    <section class="cv wrap">
+      <h2>{{ cv.awards_title | escape }}</h2>
+      <div>
+        {%- for item in cv.awards %}
+        <article class="entry">
+          <p class="dates">{{ item.dates | escape }}</p>
+          <div>
+            <h3>{{ item.title | escape }}</h3>
+            <p class="org">{% include inline.html text=item.details %}</p>
+          </div>
+        </article>
+        {%- endfor %}
+      </div>
     </section>
 
-    <section class="education wrap medium pad">
-      <h3 class="mono">{{ cv.education_title | escape }}</h3>
-      {%- for school in cv.education %}
-      <article class="entry">
-        <span class="dates">{{ school.dates | escape }}</span>
-        <p><strong>{{ school.school | escape }}</strong>{% if school.details %} – {{ school.details | escape }}{% endif %}</p>
-        {%- if school.degree %}
-        <p>{{ school.degree | escape }}</p>
-        {%- endif %}
-      </article>
-      {%- endfor %}
+    <section class="cv wrap">
+      <h2>{{ cv.skills_title | escape }}</h2>
+      {% include facts.html facts=cv.skills %}
     </section>

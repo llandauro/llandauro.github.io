@@ -1,49 +1,65 @@
 ---
 layout: default
 ---
-    <section class="wrap">
-      <h1 class="project-title">{{ page.title | escape }}</h1>
-      {%- if page.summary and page.summary != "" %}
-      <h2 class="center">{{ page.summary | escape }}</h2>
+    <article class="project wrap">
+      <div class="project-head{% unless page.cover.wide %} project-head-split{% endunless %}">
+      <header class="page-head">
+        {%- if page.label and page.label != "" %}
+        <p class="label">{{ page.label | escape }}</p>
+        {%- endif %}
+        <h1>{{ page.title | escape }}</h1>
+        {%- if page.summary and page.summary != "" %}
+        <p class="lead">{{ page.summary | escape }}</p>
+        {%- endif %}
+        {% include links.html links=page.links %}
+      </header>
+
+      {% if page.video and page.video.file != "" -%}
+      <figure class="video">
+        <video controls muted playsinline preload="metadata" aria-label="{{ page.video.alt | escape }}" src="{{ '/videos/' | append: page.video.file | relative_url }}"{% if page.cover.image %} poster="{{ '/images/' | append: page.cover.image | relative_url }}"{% endif %}></video>
+        {%- if page.video.caption and page.video.caption != "" %}
+        <figcaption>{{ page.video.caption | escape }}</figcaption>
+        {%- endif %}
+      </figure>
+      {%- else -%}
+      <div class="cover">{% include image.html item=page.cover caption=true %}</div>
       {%- endif %}
-    </section>
+      </div>
 
-    {% if page.gallery.size > 0 -%}
-    <section class="gallery wrap">
-      {%- for item in page.gallery %}
-      {% if forloop.index == 2 %}{% include image.html item=item class="large" %}{% else %}{% include image.html item=item %}{% endif %}
-      {%- endfor %}
-    </section>
-    {%- endif %}
+      <div class="project-body">
+        <aside>
+      {% include facts.html facts=page.facts %}
+        </aside>
+        <div class="prose">
+{{ content }}
+          {%- if page.paper %}
+          <div class="paper">
+            <p class="label">Publication</p>
+            <p class="paper-title">{{ page.paper.title | escape }}</p>
+            <p>{% include inline.html text=page.paper.authors %}</p>
+            <p>{{ page.paper.venue | escape }}</p>
+          </div>
+          {%- endif %}
+        </div>
+      </div>
 
-    {% if page.description and page.description != "" -%}
-    <section class="wrap narrow pad">
-      <h3>{{ page.description | escape }}</h3>
-    </section>
-    {%- endif %}
+      {% if page.gallery.size > 0 -%}
+      <div class="gallery">
+        {%- for item in page.gallery %}
+        {% include image.html item=item caption=true %}
+        {%- endfor %}
+      </div>
+      {%- endif %}
 
-    {% if page.more_images.size > 0 -%}
-    <section class="grid-2 wrap narrow">
-      {%- for item in page.more_images %}
-      {% include image.html item=item %}
-      {%- endfor %}
-    </section>
-    {%- endif %}
-
-    {% if page.role and page.role != "" -%}
-    <section class="wrap narrow pad">
-      <h3>{{ page.role | escape }}</h3>
-    </section>
-    {%- endif %}
-
-    {% comment %} "Next project": follows "order" and goes back to the first one at the end {% endcomment -%}
-    {%- assign projects = site.projects | sort: "order", "last" -%}
-    {%- if projects.size > 1 -%}
-      {%- assign next = projects[0] -%}
-      {%- for project in projects -%}
-        {%- if project.url == page.url and forloop.last == false -%}
-          {%- assign next = projects[forloop.index] -%}
-        {%- endif -%}
-      {%- endfor -%}
-    <a class="button" href="{{ next.url | relative_url }}">Next project</a>
-    {%- endif %}
+      {% comment %} "Next project": follows "order" and goes back to the first one at the end {% endcomment -%}
+      {%- assign projects = site.projects | sort: "order", "last" -%}
+      {%- if projects.size > 1 -%}
+        {%- assign next = projects[0] -%}
+        {%- for project in projects -%}
+          {%- if project.url == page.url and forloop.last == false -%}
+            {%- assign next = projects[forloop.index] -%}
+          {%- endif -%}
+        {%- endfor -%}
+      <a class="next" href="{{ next.url | relative_url }}"><span class="label">Next project</span> {{ next.title | escape }}</a>
+      {%- endif %}
+    </article>

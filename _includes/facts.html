@@ -1,0 +1,8 @@
+{%- comment -%} List of short facts. Parameter: facts {%- endcomment -%}
+{%- if include.facts and include.facts.size > 0 -%}
+<dl class="facts">
+        {%- for fact in include.facts %}
+        <div><dt>{{ fact.label | escape }}</dt><dd>{% include inline.html text=fact.text %}</dd></div>
+        {%- endfor %}
+      </dl>
+{%- endif -%}

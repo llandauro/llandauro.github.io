@@ -1,36 +1,48 @@
 {%- assign name = site.data.site.name -%}
 {%- assign menu = site.data.site.menu -%}
-{%- assign projects = site.projects | sort: "order", "last" -%}
+{%- assign contact = site.data.site.contact -%}
 {%- assign section = page.section -%}
 {%- if page.collection == "projects" -%}{%- assign section = "projects" -%}{%- endif -%}
 {%- assign content_data = site.data[page.section] -%}
 {%- assign search_description = page.search_description | default: content_data.search_description -%}
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if section != "home" %}{{ menu[section] | escape }} - {% endif %}{{ name | escape }}</title>
+  <title>{% if page.collection == "projects" %}{{ page.title | escape }} - {% elsif section != "home" %}{{ menu[section] | escape }} - {% endif %}{{ name | escape }}</title>
   <meta name="description" content="{{ search_description | escape }}">
-  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preload" href="{{ '/fonts/source-code-pro-300-600.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="site-name" href="{{ '/index.html' | relative_url }}">{{ name | escape }}</a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="{{ '/index.html' | relative_url }}"{% if section == "home" %} aria-current="page"{% endif %}>{{ menu.home | escape }}</a>
-      <a href="{{ '/experience.html' | relative_url }}"{% if section == "experience" %} aria-current="page"{% endif %}>{{ menu.experience | escape }}</a>
-      {%- if projects.size > 0 %}
-      <a href="{{ projects[0].url | relative_url }}"{% if section == "projects" %} aria-current="page"{% endif %}>{{ menu.projects | escape }}</a>
-      {%- endif %}
-    </nav>
+    <div class="wrap">
+      <a class="site-name" href="{{ '/index.html' | relative_url }}">{{ name | escape }}</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="{{ '/index.html' | relative_url }}"{% if section == "home" %} aria-current="page"{% endif %}>{{ menu.home | escape }}</a>
+        <a href="{{ '/projects.html' | relative_url }}"{% if section == "projects" %} aria-current="{% if page.collection == 'projects' %}true{% else %}page{% endif %}"{% endif %}>{{ menu.projects | escape }}</a>
+        <a href="{{ '/experience.html' | relative_url }}"{% if section == "experience" %} aria-current="page"{% endif %}>{{ menu.experience | escape }}</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main id="main">
 {{ content }}
   </main>
-{% if content contains 'class="carousel"' %}
-  <script src="{{ '/js/carousel.js' | relative_url }}"></script>
-{%- endif %}
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>{{ contact.text | escape }}</p>
+      <ul>
+        <li><a href="{{ contact.linkedin | escape }}">{{ contact.linkedin_text | escape }}</a></li>
+        {%- if contact.email and contact.email != "" %}
+        <li><a href="mailto:{{ contact.email | escape }}">{{ contact.email | escape }}</a></li>
+        {%- endif %}
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>

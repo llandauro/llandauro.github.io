@@ -6,65 +6,60 @@
 #   **bold**, *italic* and [link text](https://...) work there.
 
 # Description shown by search engines
-search_description: "Lara Libertad Landauro, Computer Science at McGill University: robotics and computer vision."
+search_description: "Lara Libertad Landauro, M.Sc. student in Computer Science at McGill University: robotics and computer vision for natural environments."
 
 # Main picture ("alt" describes it for people who cannot see it)
 portrait:
   image: "portrait.jpg"
   alt: "Portrait of Lara Libertad Landauro"
 
+# Text under your name
+intro: |
+  I use **robotics and computer vision** to understand and protect natural environments, from off-trail forests to the sea.
+
+# Short facts under the intro. To add one, copy a block of 2 lines.
+facts:
+  - label: "now"
+    text: "M.Sc. Computer Science, McGill, with Prof. David Meger"
+  - label: "before"
+    text: "B.Sc. Computer Science, Minor in Management, McGill"
+  - label: "paper"
+    text: "[Topological mapping for off-road navigation](projects/topological-mapping.html), ICRA 2025"
+
+# Projects: they come from _projects/. The one with the lowest "order" is shown large.
+projects_title: "Selected projects"
+projects_link: "All projects"
+
 about_title: "About me"
 
 about: |
-  I am a graduating student from McGill University with a B.Sc. in Computer Science. I am passionate about using **robotics and computer vision** to preserve **marine environments** and **empower the Latin American community.**
+  I first discovered robotics at McGill's Mobile Robotics Lab, testing a rover every week in the Gault Nature Reserve and editing a paper on off-trail navigation. I then joined McGill Robotics, where I built the computer vision system of an autonomous underwater vehicle.
 
-  I first discovered robotics while interning at the McGill Mobile Robotics Lab, where I supported PhD candidate J.-F. Tremblay in his research on autonomous off-road traversability, published at the International Conference on Robotics and Automation.
+  What ties my work together is the environment, and **marine environments** above all. I have labelled and analyzed images for a system that monitors fish populations at sea, and worked on tracing the microplastics found on turtle nesting beaches in Costa Rica.
 
-  Now part of the McGill Robotics Autonomous Underwater Vehicle Software team, I built the computer vision software architecture for underwater object detection. Our robot participated in the RoboSub 2025 Competition, where we won three different awards.
+  I also care about **empowering the Latin American community**: I am Director of Student Affairs at ALPFA Montreal and was co-president of McGill's Spanish and Latin-American Student Association.
 
-  During McGill's study trip to Costa Rica, my team and I partnered with the NGO Sostenibilidad en Grande to optimize their data collection process. Our goal was to gain a better understanding of how microplastics affect the temperatures of turtle nesting beaches, as turtles' gender is temperature-dependent during incubation. We laid the groundwork for automatically classifying microplastic fragments in the sand using computer vision, paving the way for future applications.
+  Away from the keyboard, I swim with the McGill Masters Swimming Club and study piano and composition.
 
-# Sliding pictures, in order. To add one, copy a block of 3 lines.
-# "caption" is the text under the picture; use "" for none.
-carousel:
-  - image: "robosub-auv.jpg"
-    alt: "Underwater robot in a pool beside a diver"
-    caption: "McGill Robotics' AUV during RoboSub 2025 Competition"
-  - image: "costa-rica-beach.jpg"
-    alt: "Sunset over a sandy beach"
-    caption: "Costa Rica Turtle Nesting Protected Area"
-  - image: "rover.jpg"
-    alt: "Yellow and black rover on a snowy forest trail"
-    caption: "Rover used during research project for traversability tasks"
-
-# Text between the "About me" section and the cards
-statement: |
-  I'm currently looking for a new **graduate position starting in Spring 2026** or an **internship starting in Winter/Spring 2026**, with a duration of between 4 and 16 months. I am willing to relocate for an interesting job opportunity.
-
-# Cards, 3 per row. With image: "" an empty dashed box is shown.
-# To add a card, copy a block of 3 lines. To remove one, delete its block.
-cards:
-  - title: "Name of presentation"
-    image: ""
-    alt: ""
-  - title: "Name of project"
-    image: ""
-    alt: ""
-  - title: "Name of video"
-    image: ""
-    alt: ""
-  - title: "Name of presentation"
-    image: ""
-    alt: ""
-  - title: "Name of project"
-    image: ""
-    alt: ""
-  - title: "Name of video"
-    image: ""
-    alt: ""
-
-# Bottom of the page
-contact:
-  text: "Get in touch at"
-  link: "https://www.linkedin.com/in/lara-landauro/"
-  link_text: "www.linkedin.com/in/lara-landauro/"
+# Short list next to "About me". Full details are in _data/experience.yml.
+timeline_title: "Recently"
+timeline_link: "Full experience"
+timeline:
+  - dates: "2026 - now"
+    role: "M.Sc. Computer Science"
+    place: "McGill University"
+  - dates: "2026 - now"
+    role: "Teaching Assistant, COMP208"
+    place: "McGill University"
+  - dates: "2026"
+    role: "Scientific Programmer/Analyst"
+    place: "Kinsol Research"
+  - dates: "2025"
+    role: "AUV Software Engineer"
+    place: "McGill Robotics"
+  - dates: "2025"
+    role: "Data Analytics and Automation Intern"
+    place: "KPMG Management Consulting"
+  - dates: "2024"
+    role: "Research Assistant"
+    place: "Mobile Robotics Lab, McGill"

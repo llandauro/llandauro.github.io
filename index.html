@@ -4,32 +4,44 @@ layout: default
 section: home
 ---
 {%- assign home = site.data.home -%}
+{%- assign projects = site.projects | sort: "order", "last" -%}
     <section class="hero wrap">
-      <h1 class="mono grey-light">{{ site.data.site.name | escape }}</h1>
-      {% include image.html item=home.portrait %}
+      <div class="hero-text">
+        <h1>{{ site.data.site.name | escape }}</h1>
+        <div class="lead">{{ home.intro | markdownify }}</div>
+        {% include facts.html facts=home.facts %}
+      </div>
+      <div class="portrait">{% include image.html item=home.portrait %}</div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>{{ home.projects_title | escape }}</h2>
+          <a class="more" href="{{ '/projects.html' | relative_url }}">{{ home.projects_link | escape }}</a>
+        </div>
+        <div class="cards">
+          {%- for project in projects limit: 3 %}
+          {% if forloop.first %}{% include project-card.html project=project large=true %}{% else %}{% include project-card.html project=project large=false %}{% endif %}
+          {%- endfor %}
+        </div>
+      </div>
     </section>
 
     <section class="about wrap">
-      <div class="pad">
-        <h2 class="mono grey-light center">{{ home.about_title | escape }}</h2>
+      <div class="prose">
+        <h2>{{ home.about_title | escape }}</h2>
         {{ home.about | markdownify }}
       </div>
-      {% include carousel.html pictures=home.carousel ratio="1.3" %}
-    </section>
-
-    <section class="statement wrap pad">
-      {{ home.statement | markdownify }}
-    </section>
-
-    <section class="cards wrap">
-      {%- for card in home.cards %}
       <div>
-        {% include image.html item=card %}
-        <p>{{ card.title | escape }}</p>
+        <div class="section-head">
+          <h2>{{ home.timeline_title | escape }}</h2>
+          <a class="more" href="{{ '/experience.html' | relative_url }}">{{ home.timeline_link | escape }}</a>
+        </div>
+        <ol class="timeline">
+          {%- for item in home.timeline %}
+          <li><span class="dates">{{ item.dates | escape }}</span><span><strong>{{ item.role | escape }}</strong><br>{{ item.place | escape }}</span></li>
+          {%- endfor %}
+        </ol>
       </div>
-      {%- endfor %}
-    </section>
-
-    <section class="contact wrap">
-      <h2 class="grey">{{ home.contact.text | escape }} <a href="{{ home.contact.link | escape }}">{{ home.contact.link_text | escape }}</a></h2>
     </section>

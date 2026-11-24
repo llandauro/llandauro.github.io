@@ -1,6 +1,9 @@
-{%- comment -%} One picture, or an empty dashed box when no image is given. Parameters: item, class {%- endcomment -%}
+{%- comment -%} One picture, nothing when no image is given. Parameters: item, caption (true to show it) {%- endcomment -%}
 {%- if include.item.image and include.item.image != "" -%}
-<img{% if include.class %} class="{{ include.class }}"{% endif %} src="{{ '/images/' | append: include.item.image | relative_url }}" alt="{{ include.item.alt | escape }}">
-{%- else -%}
-<div class="placeholder{% if include.class %} {{ include.class }}{% endif %}"></div>
+<figure class="figure">
+        <div class="frame"><img src="{{ '/images/' | append: include.item.image | relative_url }}" alt="{{ include.item.alt | escape }}"{% if include.item.focus %} style="object-position: {{ include.item.focus | escape }}"{% endif %}></div>
+        {%- if include.caption and include.item.caption and include.item.caption != "" %}
+        <figcaption>{{ include.item.caption | escape }}</figcaption>
+        {%- endif %}
+      </figure>
 {%- endif -%}
